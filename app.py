@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import config
 from werkzeug.security import check_password_hash
 
-db = _______
+db = 'database/database.db'
 app = Flask(__name__)
 
 

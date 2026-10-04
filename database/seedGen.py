@@ -29,8 +29,8 @@ for i in range(len(names)):
     elif i == 7:
         role = roles[2]
     room = rooms[randint(0,len(rooms)-1)]
-    sql.append(f"insert into users values ('{uID}', '{usernames[i]}', '{generate_password_hash("password")}', '{role}')")
-    sql.append(f"insert into persons ('{uID}', '{names[i]}', '{randint(18,30)}', '{room}')")
+    sql.append(f"insert into users values ('{uID}', '{usernames[i]}', '{generate_password_hash('password')}', '{role}');")
+    sql.append(f"insert into persons values ('{uID}', '{names[i]}', '{randint(18,30)}', '{room}');")
     people.append(People(uID,room))
 
 #rooms
@@ -39,13 +39,13 @@ for i in range(len(rooms)):
     for p in people:
         if p.room == rooms[i]:
             count += 1
-    sql.append(f"insert into rooms values ('{rooms[i]}', '{count}','{art[i]}')")
+    sql.append(f"insert into rooms values ('{rooms[i]}', '{count}','{art[i]}');")
 
 #galleryEvents
 eID = 0
 for i in range(3):
     eID += 1
-    sql.append(f"insert into galleryEvents values ('{eID}', '{times[i]}', '{dates[i]}', '{rooms[randint(0,len(rooms)-2)]}', '{eNames[i]}')")
+    sql.append(f"insert into galleryEvents values ('{eID}', '{times[i]}', '{dates[i]}', '{rooms[randint(0,len(rooms)-2)]}', '{eNames[i]}');")
 
 #auditLogs
 
@@ -55,8 +55,8 @@ sID = 0
 for i in people:
     sID += 1
     date = dates[randint(0,len(dates)-1)]
-    sql.append(f"insert into sessions values ('{sID}', '{i.id}', '{times[0]}', '{date}', '{times[2]}', '{date}')")
-    sql.append(f"insert into auditLogs values ('{i.id}', '{times[1]}'. '{date}'. '{rooms[4]}', '{i.room}')")
+    sql.append(f"insert into sessions values ('{sID}', '{i.id}', '{times[0]}', '{date}', '{times[2]}', '{date}');")
+    sql.append(f"insert into auditLogs values ('{i.id}', '{times[1]}', '{date}', '{rooms[4]}', '{i.room}');")
 
 #write
 if __name__ == "__main__":

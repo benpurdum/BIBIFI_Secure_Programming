@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log History</title>
+</head>
+<body>
+    <h1>Log History</h1>
+
+    {% if logs %}
+        <ul>
+            {% for log in logs %}
+                <li>User {{ log[0] }} moved from {{ log[3] }} to {{ log[4] }} on {{ log[2] }} at {{ log[1] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No log history available.</p>
+    {% endif %}
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

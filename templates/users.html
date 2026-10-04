@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Management</title>
+</head>
+<body>
+    <h1>User Management</h1>
+
+    <h2>Existing Users</h2>
+
+    {% if users %}
+        <ul>
+            {% for user in users %}
+                <li>{{ user[1] }} - {{ user[2] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No users found.</p>
+    {% endif %}
+
+    <h2>Create User</h2>
+
+<form action="{{ url_for('create_user') }}" method="POST">
+    <p>
+        <label>Username:</label>
+        <input type="text" name="username" required>
+    </p>
+
+    <p>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+    </p>
+
+    <p>
+        <label>Name:</label>
+        <input type="text" name="name" required>
+    </p>
+
+    <p>
+        <label>Age:</label>
+        <input type="number" name="age" min="0" required>
+    </p>
+
+    <p>
+        <label>Role:</label>
+        <select name="role" required>
+            <option value="Guest">Guest</option>
+            <option value="Employee">Employee</option>
+            <option value="Admin">Admin</option>
+        </select>
+    </p>
+
+    <button type="submit">Submit</button>
+</form>
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+
+</html>

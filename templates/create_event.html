@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Record Gallery Event</title>
+</head>
+<body>
+    <h1>Record Gallery Event</h1>
+
+    <form action="{{ url_for('create_event') }}" method="POST">
+        <p>
+            <label>Event Name:</label>
+            <input type="text" name="name" required>
+        </p>
+
+        <p>
+            <label>Room:</label>
+            <select name="room" required>
+                {% for room in rooms %}
+                    <option value="{{ room[0] }}">{{ room[0] }}</option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</body>
+</html>

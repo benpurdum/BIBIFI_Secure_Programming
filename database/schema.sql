@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS "auditLogs" (
 	"date"	TEXT,
 	"fromRoom"	TEXT,
 	"toRoom"	TEXT,
-	PRIMARY KEY("userID")
 );
 CREATE TABLE IF NOT EXISTS "galleryEvents" (
 	"eventID"	INTEGER,

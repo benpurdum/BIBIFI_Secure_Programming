@@ -13,7 +13,8 @@ from database.storedProcedures import (
     addSession,
     endSession,
     seeAuditHistory,
-    viewAllUsers
+    viewAllUsers,
+    seeCurrentRoom
 )
 
 def get_db_connection():
@@ -73,12 +74,14 @@ def home():
         return redirect(url_for('login'))
 
     rooms = viewAllRooms()
+    cRoom = seeCurrentRoom(session['id'])
 
     return render_template(
         'home.html',
         username=session['username'],
         role=session['role'],
-        rooms=rooms
+        rooms=rooms,
+        cRoom=cRoom
     )
 
 # Log History

@@ -1,40 +1,40 @@
-insert into users values ('1', 'bpurdum', 'scrypt:32768:8:1$Vxe9SpObwRhu6ANG$79858ae8f2d75c9d90f045ce2a9c1f092bafdf0dd831cf6715d1ac0581ce4f74fb28e2bc7e82ac4d15b9239ddce2d1c383cb0c1cb6e282d3c929f9398713c916', 'Guest')
-insert into persons ('1', 'Ben Purdum', '21', 'Lobby')
-insert into users values ('2', 'zeigenbrod', 'scrypt:32768:8:1$Dvpe3RWNONZadQV8$96626e007014b855e58894d0cdb9d902a71b9e4c0509604f079fb652eec615a5f8558f644430121efaa704b887e6151f10ea0f64b29a97b3c8f6db7ce9ceabc8', 'Guest')
-insert into persons ('2', 'Zoe Eigenbrod', '27', 'Room 2')
-insert into users values ('3', 'jford', 'scrypt:32768:8:1$NHux8Z8gCjpK1Zh2$54dae7e3823cba47d83eea70e95bc3c6c1814ae2aeb69df4ab27bd5c94d9f1799ccb4870145f80a173e7e3640b5018d00e7c86d62df9747be4e34bfd2e8d1a5e', 'Guest')
-insert into persons ('3', 'Jacob Ford', '28', 'Room 1')
-insert into users values ('4', 'sshea', 'scrypt:32768:8:1$fpG1QWXt8E1HibeT$0ab8255b76903a636a4bf7c9fb132f9c93fcf9f63851582c472117f09111542cc14e4cc7933ab5a2d0d9ab441501e6479c6c63adf47ab8a63ba59f67ad78f191', 'Guest')
-insert into persons ('4', 'Sean Shea', '28', 'Lobby')
-insert into users values ('5', 'wworld', 'scrypt:32768:8:1$YUmJsijHZOwBiXas$ec233d716791443e119297d8c3232e4ae352a1a806e4f964c62196d8c8602e6b3155f3883826b7a571e3ffbf9c5a9e24dc1e999bce31508f37c6df19063994b1', 'Guest')
-insert into persons ('5', 'Will World', '23', 'Lobby')
-insert into users values ('6', 'bleber', 'scrypt:32768:8:1$BreiEllRrzWqGAtq$bd489c97ac4fe59e9736e91f4c60924ae34460755133a36c410cae6b812cd6a5e3de5a2ccd6472c4566b0b207044ba769ce50943f23001c3056fd37f49fe974e', 'Employee')
-insert into persons ('6', 'Ben Leber', '22', 'Room 2')
-insert into users values ('7', 'cgrant', 'scrypt:32768:8:1$UfIXqTdT35fVtZne$0e769dbebf8e39d8ace6b53ba9294aabc64dd829a3ac50fbd8444433d5ba7f09e0e5e0c5639ec1c4badda577b2d131088eabb35987bafaeeb0095f07a33838bb', 'Employee')
-insert into persons ('7', 'Colin Grant', '23', 'Room 1')
-insert into users values ('8', 'admin', 'scrypt:32768:8:1$2W4GhRiE2dcyj2xW$a97a9d5426ffb509152cc2e9190fd71f16b9cfc168068c0412ee555b5adcdcc74d3730cb0fb515bbfd1a154d9a2d2ac03136b695a9adc51fe3888ce73df9fdbf', 'Admin')
-insert into persons ('8', 'John Admin', '25', 'Lobby')
-insert into rooms values ('Gallery', '0','Lots of Art')
-insert into rooms values ('Room 1', '2','Art 1')
-insert into rooms values ('Room 2', '2','Art 2')
-insert into rooms values ('Room 3', '0','Art 3')
-insert into rooms values ('Lobby', '4','Art L')
-insert into galleryEvents values ('1', '12:30pm', '10/01/2026', 'Room 2', 'Event 1')
-insert into galleryEvents values ('2', '1:30pm', '10/02/2026', 'Room 1', 'Event 2')
-insert into galleryEvents values ('3', '2:30pm', '10/03/2026', 'Room 2', 'Event 3')
-insert into sessions values ('1', '1', '12:30pm', '10/03/2026', '2:30pm', '10/03/2026')
-insert into auditLogs values ('1', '1:30pm'. '10/03/2026'. 'Lobby', 'Lobby')
-insert into sessions values ('2', '2', '12:30pm', '10/03/2026', '2:30pm', '10/03/2026')
-insert into auditLogs values ('2', '1:30pm'. '10/03/2026'. 'Lobby', 'Room 2')
-insert into sessions values ('3', '3', '12:30pm', '10/01/2026', '2:30pm', '10/01/2026')
-insert into auditLogs values ('3', '1:30pm'. '10/01/2026'. 'Lobby', 'Room 1')
-insert into sessions values ('4', '4', '12:30pm', '10/02/2026', '2:30pm', '10/02/2026')
-insert into auditLogs values ('4', '1:30pm'. '10/02/2026'. 'Lobby', 'Lobby')
-insert into sessions values ('5', '5', '12:30pm', '10/01/2026', '2:30pm', '10/01/2026')
-insert into auditLogs values ('5', '1:30pm'. '10/01/2026'. 'Lobby', 'Lobby')
-insert into sessions values ('6', '6', '12:30pm', '10/02/2026', '2:30pm', '10/02/2026')
-insert into auditLogs values ('6', '1:30pm'. '10/02/2026'. 'Lobby', 'Room 2')
-insert into sessions values ('7', '7', '12:30pm', '10/03/2026', '2:30pm', '10/03/2026')
-insert into auditLogs values ('7', '1:30pm'. '10/03/2026'. 'Lobby', 'Room 1')
-insert into sessions values ('8', '8', '12:30pm', '10/02/2026', '2:30pm', '10/02/2026')
-insert into auditLogs values ('8', '1:30pm'. '10/02/2026'. 'Lobby', 'Lobby')
+insert into users (userID, username, password, role) values ('1', 'bpurdum', 'scrypt:32768:8:1$EJu1WtY3wN8e2sKO$86d08b3d5e47a767d78f26a85811f9b53e5a613acacebcd5584fb453c7bb53f0fdd33ea01e60bdd418b05599cc55cd49e38bb886052a72f5affd6d937060b5d6', 'Guest');
+insert into persons (userID, name, age, currentRoom) values ('1', 'Ben Purdum', '30', 'Room 2');
+insert into users (userID, username, password, role) values ('2', 'zeigenbrod', 'scrypt:32768:8:1$lZ0b8Dxsi7KJw9ed$786c12f254967120586a4e790143cde925f0bceb2314994606569b5e2442ca8723be326c3cb70435703f016d3d4c258e6af29235dd826e7ec5307496ce5b8089', 'Guest');
+insert into persons (userID, name, age, currentRoom) values ('2', 'Zoe Eigenbrod', '18', 'Room 2');
+insert into users (userID, username, password, role) values ('3', 'jford', 'scrypt:32768:8:1$zFLACK0e1o5Vty6r$2912789f846a6c2404d80bcece43dfc88b89051d25d65c46459030d8590ecad43c472fd31ebbdbd12d499e0e847dbb4c0cc21258fd9f673c39e65fe889dceaff', 'Guest');
+insert into persons (userID, name, age, currentRoom) values ('3', 'Jacob Ford', '18', 'Room 2');
+insert into users (userID, username, password, role) values ('4', 'sshea', 'scrypt:32768:8:1$WkM5sfKVx9wu0YWc$874531cd8a80d75a83a493ae71a8179ab5058a90a032ef820f4730a2477ddaa7bef3cda4c2bf2e27820ee178b64870923bda0fdd236707d1aaeb7a61d31369a5', 'Guest');
+insert into persons (userID, name, age, currentRoom) values ('4', 'Sean Shea', '18', 'Room 2');
+insert into users (userID, username, password, role) values ('5', 'wworld', 'scrypt:32768:8:1$Qsy6gNyEJW41rpUz$111a2af3b08661eb8ee139956a846c707966fbfdb7d2c69fbc76400c7b1057a473b6132c5c147b1b45338b9724095e54c7ed5e70952f940fcfe06ffc8fbb8387', 'Guest');
+insert into persons (userID, name, age, currentRoom) values ('5', 'Will World', '24', 'Gallery');
+insert into users (userID, username, password, role) values ('6', 'bleber', 'scrypt:32768:8:1$doefcMVp9vKvqIDm$ffe8917e0fe71b47f18c835493bd4e5418107a3ed03243d1f7494851400c28b9420a3f15019f640de5b2281a0529a9197240cabd50a81008e9bbec227adcada5', 'Employee');
+insert into persons (userID, name, age, currentRoom) values ('6', 'Ben Leber', '21', 'Lobby');
+insert into users (userID, username, password, role) values ('7', 'cgrant', 'scrypt:32768:8:1$q3K6dJIVhXpXNpr8$8934f15288396625ae3ccf0bd8988bd19006271256258d3acba82f85dcfd81aec5bb7a9718d8657173e07e5882ecacc0204ceb7ea23ce6eab8390f96e3073e29', 'Employee');
+insert into persons (userID, name, age, currentRoom) values ('7', 'Colin Grant', '30', 'Room 1');
+insert into users (userID, username, password, role) values ('8', 'admin', 'scrypt:32768:8:1$qaP6xfUyCOGBULhs$6673f970003e5a3ac3ca5922fbfe07992bab8284c164dbecd7bb5434a70c591d03d01b119f65aa26fcb6163fd3cafe54c1e137dec9c3597715307f1b963a0c77', 'Admin');
+insert into persons (userID, name, age, currentRoom) values ('8', 'John Admin', '28', 'Room 2');
+insert into rooms (name, numPeople, art) values ('Gallery', '1','Lots of Art');
+insert into rooms (name, numPeople, art) values ('Room 1', '1','Art 1');
+insert into rooms (name, numPeople, art) values ('Room 2', '5','Art 2');
+insert into rooms (name, numPeople, art) values ('Room 3', '0','Art 3');
+insert into rooms (name, numPeople, art) values ('Lobby', '1','Art L');
+insert into galleryEvents (eventID, time, date, room, name) values ('1', '12:30pm', '10/01/2026', 'Room 2', 'Event 1');
+insert into galleryEvents (eventID, time, date, room, name) values ('2', '1:30pm', '10/02/2026', 'Room 3', 'Event 2');
+insert into galleryEvents (eventID, time, date, room, name) values ('3', '2:30pm', '10/03/2026', 'Gallery', 'Event 3');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('1', '1', '12:30pm', '10/03/2026', '2:30pm', '10/03/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('1', '1:30pm', '10/03/2026', 'Lobby', 'Room 2');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('2', '2', '12:30pm', '10/01/2026', '2:30pm', '10/01/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('2', '1:30pm', '10/01/2026', 'Lobby', 'Room 2');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('3', '3', '12:30pm', '10/01/2026', '2:30pm', '10/01/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('3', '1:30pm', '10/01/2026', 'Lobby', 'Room 2');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('4', '4', '12:30pm', '10/01/2026', '2:30pm', '10/01/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('4', '1:30pm', '10/01/2026', 'Lobby', 'Room 2');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('5', '5', '12:30pm', '10/01/2026', '2:30pm', '10/01/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('5', '1:30pm', '10/01/2026', 'Lobby', 'Gallery');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('6', '6', '12:30pm', '10/01/2026', '2:30pm', '10/01/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('6', '1:30pm', '10/01/2026', 'Lobby', 'Lobby');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('7', '7', '12:30pm', '10/03/2026', '2:30pm', '10/03/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('7', '1:30pm', '10/03/2026', 'Lobby', 'Room 1');
+insert into sessions (sessionID, userID, loginTime, loginDate, logoutTime, logoutDate) values ('8', '8', '12:30pm', '10/02/2026', '2:30pm', '10/02/2026');
+insert into auditLogs (userID, time, date, fromRoom, toRoom) values ('8', '1:30pm', '10/02/2026', 'Lobby', 'Room 2');

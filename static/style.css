@@ -1,0 +1,431 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: #435165;
+    margin: 0;
+}
+.login, .register {
+    width: 400px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 100px auto;
+}
+.login h1, .register h1 {
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    padding: 20px 0 20px 0;
+    border-bottom: 1px solid #dee0e4;
+}
+.login .links, .register .links {
+    display: flex;
+    padding: 0 15px;
+}
+.login .links a, .register .links a {
+    color: #adb2ba;
+    text-decoration: none;
+    display: inline-flex;
+    padding: 0 10px 10px 10px;
+    font-weight: bold;
+}
+.login .links a:hover, .register .links a:hover {
+    color: #9da3ac;
+}
+.login .links a.active, .register .links a.active {
+    border-bottom: 3px solid #3274d6;
+    color: #3274d6;
+}
+.login form, .register form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+.login form label, .register form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+.login form input[type="password"], .login form input[type="text"], .login form input[type="email"], .register form input[type="password"], .register form input[type="text"], .register form input[type="email"] {
+    width: 310px;
+    height: 50px;
+    border: 1px solid #dee0e4;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+.login form input[type="submit"], .register form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #3274d6;
+    border: 0;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.2s;
+}
+.login form input[type="submit"]:hover, .register form input[type="submit"]:hover {
+    background-color: #2868c7;
+    transition: background-color 0.2s;
+}
+.navtop {
+    background-color: #2f3947;
+    height: 60px;
+    width: 100%;
+    border: 0;
+}
+.navtop div {
+    display: flex;
+    margin: 10px;
+    width: 1000px;
+    height: 100%;
+}
+.navtop div h1, .navtop div a {
+    display: inline-flex;
+    align-items: center;
+}
+.navtop div h1 {
+    flex: 1;
+    font-size: 24px;
+    padding: 0;
+   margin: 0;
+    color: #eaebed;
+    font-weight: normal;
+}
+.navtop div a {
+    padding: 0 20px;
+    text-decoration: none;
+    color: #c1c4c8;
+    font-weight: bold;
+}
+.navtop div a i {
+    padding: 2px 8px 0 0;
+}
+.navtop div a:hover {
+    color: #eaebed;
+}
+body.loggedin {
+    background-color: #f3f4f7;
+}
+.content {
+    width: 1000px;
+    margin: 0 auto;
+}
+.content h2 {
+    margin: 0;
+    padding: 25px 0;
+    font-size: 22px;
+    border-bottom: 1px solid #e0e0e3;
+    color: #4a536e;
+}
+.content > p, .content > div {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    padding: 25px;
+  background-color: #fff;
+}
+.content > p table td, .content > div table td {
+  padding: 5px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+  font-weight: bold;
+  color: #4a536e;
+  padding-right: 15px;
+}
+.content > div p {
+  padding: 5px;
+  margin: 0 0 10px 0;
+}
+
+/* --- Art gallery pages --- */
+:root {
+    --gallery-teal: #008b8b;
+    --gallery-teal-dark: #006d6d;
+    --gallery-background: #f3f5f6;
+    --gallery-text: #263238;
+    --gallery-muted: #65747b;
+    --gallery-border: #dce4e6;
+}
+
+body {
+    background: var(--gallery-background);
+    color: var(--gallery-text);
+    line-height: 1.5;
+}
+
+body.loggedin {
+    background: var(--gallery-background);
+}
+
+.content {
+    width: min(1000px, calc(100% - 40px));
+    margin: 32px auto;
+}
+
+.content h1,
+.content h2,
+.page-container h1,
+.page-container h2 {
+    color: #31565a;
+    margin: 0 0 18px;
+    padding: 0 0 12px;
+    border-bottom: 1px solid var(--gallery-border);
+    font-size: 24px;
+}
+
+.content h2,
+.page-container h2 {
+    margin-top: 26px;
+    font-size: 21px;
+}
+
+.content > p,
+.content > div,
+.page-container {
+    background: #fff;
+    border: 1px solid var(--gallery-border);
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(25, 55, 60, 0.06);
+}
+
+.page-container {
+    width: min(900px, calc(100% - 32px));
+    margin: 40px auto;
+    padding: 28px 32px;
+}
+
+.page-container > p:first-of-type {
+    color: var(--gallery-muted);
+}
+
+.content table,
+.page-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0 22px;
+}
+
+.content th,
+.content td,
+.page-container th,
+.page-container td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--gallery-border);
+}
+
+.content th,
+.page-container th {
+    background: #eaf4f3;
+    color: #31565a;
+    font-weight: 600;
+}
+
+.content tr:last-child td,
+.page-container tr:last-child td {
+    border-bottom: 0;
+}
+
+.content form,
+.page-container form {
+    margin: 16px 0;
+}
+
+.content form p,
+.page-container form p {
+    margin: 0 0 16px;
+}
+
+.content label,
+.page-container label {
+    display: block;
+    margin-bottom: 6px;
+    color: #374c50;
+    font-weight: 600;
+}
+
+.content input:not([type="submit"]),
+.content select,
+.content textarea,
+.page-container input:not([type="submit"]),
+.page-container select,
+.page-container textarea {
+    width: 100%;
+    max-width: 520px;
+    padding: 10px 12px;
+    border: 1px solid #cbd7da;
+    border-radius: 5px;
+    background: #fff;
+    color: var(--gallery-text);
+}
+
+.content input:focus,
+.content select:focus,
+.page-container input:focus,
+.page-container select:focus {
+    outline: 2px solid rgba(0, 139, 139, 0.2);
+    border-color: var(--gallery-teal);
+}
+
+.content button,
+.page-container button,
+.content input[type="submit"],
+.page-container input[type="submit"],
+.login input[type="submit"] {
+    display: inline-block;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 18px;
+    background: var(--gallery-teal);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.content button:hover,
+.page-container button:hover,
+.content input[type="submit"]:hover,
+.page-container input[type="submit"]:hover,
+.login input[type="submit"]:hover {
+    background: var(--gallery-teal-dark);
+}
+
+.content a,
+.page-container a {
+    color: var(--gallery-teal-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.content a:hover,
+.page-container a:hover {
+    text-decoration: underline;
+}
+
+.page-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0 24px;
+}
+
+.page-container li {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--gallery-border);
+}
+
+.page-container li:last-child {
+    border-bottom: 0;
+}
+
+.page-container > a {
+    display: inline-block;
+    margin-top: 14px;
+}
+
+.navtop {
+    background: var(--gallery-teal) !important;
+}
+
+.navtop .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navtop .nav-link {
+    color: #fff !important;
+}
+
+.navtop .nav-link:hover {
+    color: #e0ffff !important;
+}
+
+.login {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.login form {
+    padding: 20px 24px 28px;
+}
+
+.login form input[type="text"],
+.login form input[type="password"] {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.login form input[type="submit"] {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.login .msg {
+    width: 100%;
+    color: #a12626;
+    text-align: center;
+    padding: 4px 0;
+}
+
+@media (max-width: 600px) {
+    .content {
+        width: calc(100% - 24px);
+        margin: 20px auto;
+    }
+
+    .page-container {
+        width: calc(100% - 24px);
+        margin: 20px auto;
+        padding: 22px 18px;
+    }
+
+    .content th,
+    .content td,
+    .page-container th,
+    .page-container td {
+        padding: 9px 8px;
+    }
+}
+
+
+/* Shared layout refinements */
+.content > .page-container {
+    margin: 30px auto;
+}
+
+.page-container > p:first-child {
+    margin-top: 0;
+}
+
+.page-container form p {
+    max-width: 560px;
+}
+
+.navtop .navbar-nav {
+    align-items: center;
+    gap: 4px;
+}
+
+.navtop .navbar-brand {
+    margin-right: 28px;
+}
+
+.navtop .dropdown-menu {
+    border: 1px solid var(--gallery-border);
+    box-shadow: 0 4px 12px rgba(25, 55, 60, 0.10);
+}
+
+@media (max-width: 600px) {
+    .navtop .navbar-nav {
+        align-items: flex-start;
+    }
+}

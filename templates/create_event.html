@@ -1,21 +1,20 @@
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Record Gallery Event</title>
-</head>
-<body>
+{% block title %}Record Gallery Event{% endblock %}
+
+{% block content %}
+<main class="page-container">
     <h1>Record Gallery Event</h1>
 
     <form action="{{ url_for('create_event') }}" method="POST">
         <p>
-            <label>Event Name:</label>
-            <input type="text" name="name" required>
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" name="name" required>
         </p>
 
         <p>
-            <label>Room:</label>
-            <select name="room" required>
+            <label for="room">Room:</label>
+            <select name="room" id="room" required>
                 {% for room in rooms %}
                     <option value="{{ room[0] }}">{{ room[0] }}</option>
                 {% endfor %}
@@ -26,5 +25,5 @@
     </form>
 
     <p><a href="{{ url_for('home') }}">Back to Home</a></p>
-</body>
-</html>
+</main>
+{% endblock %}

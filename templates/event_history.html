@@ -1,10 +1,9 @@
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Gallery Event History</title>
-</head>
-<body>
+{% block title %}Gallery Event History{% endblock %}
+
+{% block content %}
+<main class="page-container">
     <h1>Gallery Event History</h1>
 
     {% if events %}
@@ -18,5 +17,5 @@
     {% endif %}
 
     <p><a href="{{ url_for('home') }}">Back to Home</a></p>
-</body>
-</html>
+</main>
+{% endblock %}

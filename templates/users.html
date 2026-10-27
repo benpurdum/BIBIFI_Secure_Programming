@@ -1,10 +1,9 @@
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>User Management</title>
-</head>
-<body>
+{% block title %}User Management{% endblock %}
+
+{% block content %}
+<main class="page-container">
     <h1>User Management</h1>
 
     <h2>Existing Users</h2>
@@ -21,40 +20,39 @@
 
     <h2>Create User</h2>
 
-<form action="{{ url_for('create_user') }}" method="POST">
-    <p>
-        <label>Username:</label>
-        <input type="text" name="username" required>
-    </p>
+    <form action="{{ url_for('create_user') }}" method="POST">
+        <p>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </p>
 
-    <p>
-        <label>Password:</label>
-        <input type="password" name="password" required>
-    </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </p>
 
-    <p>
-        <label>Name:</label>
-        <input type="text" name="name" required>
-    </p>
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </p>
 
-    <p>
-        <label>Age:</label>
-        <input type="number" name="age" min="0" required>
-    </p>
+        <p>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="0" required>
+        </p>
 
-    <p>
-        <label>Role:</label>
-        <select name="role" required>
-            <option value="Guest">Guest</option>
-            <option value="Employee">Employee</option>
-            <option value="Admin">Admin</option>
-        </select>
-    </p>
+        <p>
+            <label for="role">Role:</label>
+            <select name="role" id="role" required>
+                <option value="Guest">Guest</option>
+                <option value="Employee">Employee</option>
+                <option value="Admin">Admin</option>
+            </select>
+        </p>
 
-    <button type="submit">Submit</button>
-</form>
+        <button type="submit">Submit</button>
+    </form>
 
-    <a href="{{ url_for('home') }}">Back to Home</a>
-</body>
-
-</html>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</main>
+{% endblock %}

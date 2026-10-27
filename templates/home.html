@@ -1,22 +1,21 @@
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Art Gallery</title>
-</head>
-<body>
-    <p>Username: {{ username }}</p>
-    <p>Role: {{ role }}</p>
-    <p>Current Room: {{ cRoom }}</p>
+{% block title %}Art Gallery{% endblock %}
+
+{% block content %}
+<main class="page-container">
+    <p>Username: {{ username }}<br>Role: {{ role }}<br>Current Room: {{ cRoom }}</p>
 
     <h2>Rooms</h2>
-        <table>
+    <table>
+        <thead>
             <tr>
                 <th>Room</th>
                 <th>People</th>
                 <th>Art</th>
             </tr>
-
+        </thead>
+        <tbody>
             {% for room in rooms %}
                 <tr>
                     <td>{{ room[0] }}</td>
@@ -24,59 +23,47 @@
                     <td>{{ room[2] }}</td>
                 </tr>
             {% endfor %}
-        </table>
-
-    <br>
+        </tbody>
+    </table>
 
     <h2>Move Rooms</h2>
-
-<form action="{{ url_for('move_room') }}" method="POST">
-    <label for="room">Choose a room:</label>
-
-    <select name="room" id="room" required>
-        {% for room in rooms %}
-            <option value="{{ room[0] }}">{{ room[0] }}</option>
-        {% endfor %}
-    </select>
-
-    <button type="submit">Submit</button>
-</form>
-
-{% if role == 'Admin' %}
-    <p><a href="{{ url_for('manage_users') }}">Manage Users</a></p>
-{% endif %}
-
-{% if role == 'Admin' %}
-    <h2>Create Room</h2>
-
-    <form action="{{ url_for('create_room') }}" method="POST">
+    <form action="{{ url_for('move_room') }}" method="POST">
         <p>
-            <label>Room Name:</label>
-            <input type="text" name="name" required>
+            <label for="room">Choose a room:</label>
+            <select name="room" id="room" required>
+                {% for room in rooms %}
+                    <option value="{{ room[0] }}">{{ room[0] }}</option>
+                {% endfor %}
+            </select>
         </p>
-
-        <p>
-            <label>Number of People:</label>
-            <input type="number" name="numPeople" min="0" value="0" required>
-        </p>
-
-        <p>
-            <label>Art:</label>
-            <input type="text" name="art" required>
-        </p>
-
         <button type="submit">Submit</button>
     </form>
-{% endif %}
 
-{% if role in ['Employee', 'Admin'] %}
-    <p><a href="{{ url_for('log') }}">View Movement Log</a></p>
+    {% if role == 'Admin' %}
+        <p><a href="{{ url_for('manage_users') }}">Manage Users</a></p>
+        <h2>Create Room</h2>
+        <form action="{{ url_for('create_room') }}" method="POST">
+            <p>
+                <label for="room-name">Room Name:</label>
+                <input type="text" id="room-name" name="name" required>
+            </p>
+            <p>
+                <label for="numPeople">Number of People:</label>
+                <input type="number" id="numPeople" name="numPeople" min="0" value="0" required>
+            </p>
+            <p>
+                <label for="art">Art:</label>
+                <input type="text" id="art" name="art" required>
+            </p>
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
 
-    <p><a href="{{ url_for('create_event') }}">Record Gallery Event</a></p>
-{% endif %}
-
-<p><a href="{{ url_for('event_history') }}">View Gallery Event History</a></p>
-
-    <a href="{{ url_for('logout') }}">Logout</a>
-</body>
-</html>
+    {% if role in ['Employee', 'Admin'] %}
+        <h2>Gallery Management</h2>
+        <p><a href="{{ url_for('log') }}">View Movement Log</a></p>
+        <p><a href="{{ url_for('create_event') }}">Record Gallery Event</a></p>
+        <p><a href="{{ url_for('event_history') }}">View Gallery Event History</a></p>
+    {% endif %}
+</main>
+{% endblock %}

@@ -3,26 +3,21 @@
 <html>
 <head>
     <title>Art Gallery Login</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
 </head>
 <body>
-    <h1>Art Gallery Login</h1>
-
-    <form method="POST" action="{{ url_for('login') }}">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-
-        <br><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-
-        <br><br>
-
-        <button type="submit">Login</button>
-    </form>
-
-    {% if msg %}
-        <p>{{ msg }}</p>
-    {% endif %}
+    <div class="login">
+			<h1>Art Gallery Login</h1>
+			<form action="{{ url_for('login') }}" method="post">
+				<input type="text" name="username" placeholder="Username" id="username" required>
+                <br><br>
+				<input type="password" name="password" placeholder="Password" id="password" required>
+                <br><br>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Login" style="background-color:darkcyan;">
+			</form>
+		</div>
 </body>
 </html>

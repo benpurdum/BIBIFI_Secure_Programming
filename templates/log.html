@@ -1,10 +1,9 @@
+{% extends "layout.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Log History</title>
-</head>
-<body>
+{% block title %}Log History{% endblock %}
+
+{% block content %}
+<main class="page-container">
     <h1>Log History</h1>
 
     {% if logs %}
@@ -17,6 +16,6 @@
         <p>No log history available.</p>
     {% endif %}
 
-    <a href="{{ url_for('home') }}">Back to Home</a>
-</body>
-</html>
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</main>
+{% endblock %}

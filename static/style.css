@@ -116,10 +116,6 @@ body {
 body.loggedin {
     background-color: #f3f4f7;
 }
-.content {
-    width: 1000px;
-    margin: 0 auto;
-}
 .content h2 {
     margin: 0;
     padding: 25px 0;
@@ -428,4 +424,24 @@ body.loggedin {
     .navtop .navbar-nav {
         align-items: flex-start;
     }
+}
+
+.content {
+    width: auto;
+    max-width: 1000px;
+    margin: 25px 340px 25px 40px;
+}
+
+/* Image sits in the grey space on the right */
+.gallery-image {
+    position: fixed;
+    top: 200px;
+    right: 35px;
+    width: 650px;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
 }

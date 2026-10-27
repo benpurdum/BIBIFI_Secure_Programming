@@ -14,11 +14,11 @@ insert into users (userID, username, password, role) values ('7', 'cgrant', 'scr
 insert into persons (userID, name, age, currentRoom) values ('7', 'Colin Grant', '30', 'Room 1');
 insert into users (userID, username, password, role) values ('8', 'admin', 'scrypt:32768:8:1$qaP6xfUyCOGBULhs$6673f970003e5a3ac3ca5922fbfe07992bab8284c164dbecd7bb5434a70c591d03d01b119f65aa26fcb6163fd3cafe54c1e137dec9c3597715307f1b963a0c77', 'Admin');
 insert into persons (userID, name, age, currentRoom) values ('8', 'John Admin', '28', 'Room 2');
-insert into rooms (name, numPeople, art) values ('Gallery', '1','Lots of Art');
-insert into rooms (name, numPeople, art) values ('Room 1', '1','Art 1');
-insert into rooms (name, numPeople, art) values ('Room 2', '5','Art 2');
-insert into rooms (name, numPeople, art) values ('Room 3', '0','Art 3');
-insert into rooms (name, numPeople, art) values ('Lobby', '1','Art L');
+insert into rooms (name, numPeople, art) values ('Gallery', '1','A Large, Red Tree');
+insert into rooms (name, numPeople, art) values ('Room 1', '1','Droopy, Purple Flowers');
+insert into rooms (name, numPeople, art) values ('Room 2', '5','Red Flowers');
+insert into rooms (name, numPeople, art) values ('Room 3', '0','White Flowers');
+insert into rooms (name, numPeople, art) values ('Lobby', '1','Purple Flowers');
 insert into galleryEvents (eventID, time, date, room, name) values ('1', '12:30pm', '10/01/2026', 'Room 2', 'Event 1');
 insert into galleryEvents (eventID, time, date, room, name) values ('2', '1:30pm', '10/02/2026', 'Room 3', 'Event 2');
 insert into galleryEvents (eventID, time, date, room, name) values ('3', '2:30pm', '10/03/2026', 'Gallery', 'Event 3');

@@ -4,7 +4,7 @@ from werkzeug.security import generate_password_hash
 names = ["Ben Purdum","Zoe Eigenbrod","Jacob Ford","Sean Shea","Will World","Ben Leber","Colin Grant","John Admin"]
 usernames = ["bpurdum","zeigenbrod","jford","sshea","wworld","bleber","cgrant","admin"]
 rooms = ["Gallery","Room 1","Room 2","Room 3","Lobby"]
-art = ["Lots of Art","Art 1","Art 2","Art 3","Art L",]
+art = ["A Large, Red Tree","Droopy, Purple Flowers","Red Flowers","White Flowers","Purple Flowers",]
 eNames = ["Event 1","Event 2","Event 3"]
 uID = 0
 roles = ["Guest","Employee","Admin"]

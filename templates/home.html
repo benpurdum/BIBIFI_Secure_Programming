@@ -40,7 +40,6 @@
     </form>
 
     {% if role == 'Admin' %}
-        <p><a href="{{ url_for('manage_users') }}">Manage Users</a></p>
         <h2>Create Room</h2>
         <form action="{{ url_for('create_room') }}" method="POST">
             <p>
@@ -65,5 +64,13 @@
         <p><a href="{{ url_for('create_event') }}">Record Gallery Event</a></p>
         <p><a href="{{ url_for('event_history') }}">View Gallery Event History</a></p>
     {% endif %}
+    {% if role == 'Admin' %}
+        <p><a href="{{ url_for('manage_users') }}">Manage Users</a></p>
+    {% endif %}
 </main>
+<div class="gallery-image">
+    <img src="{{ url_for('static', filename=image) }}"
+         alt=alt>
+        <p>{{ alt }}<br>(All photos were taken by Ben Purdum)</p>
+</div>
 {% endblock %}

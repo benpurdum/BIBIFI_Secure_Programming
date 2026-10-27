@@ -76,12 +76,33 @@ def home():
     rooms = viewAllRooms()
     cRoom = seeCurrentRoom(session['id'])
 
+    image = ""
+    alt = ""
+    match cRoom:
+        case "Gallery":
+            image = "images/bigTree.jpg"
+            alt = "A Large, Red Tree"
+        case "Room 1":
+            image = "images/droopyPurpleFlowers.jpg"
+            alt = "Droopy, Purple Flowers"
+        case "Room 2":
+            image = "images/redFlowers.jpg"
+            alt = "Red Flowers"
+        case "Room 3":
+            image = "images/whiteFlowers.jpg"
+            alt = "White Flowers"
+        case "Lobby":
+            image = "images/purpleFlowers.jpg"
+            alt = "Purple Flowers"
+
     return render_template(
         'home.html',
         username=session['username'],
         role=session['role'],
         rooms=rooms,
-        cRoom=cRoom
+        cRoom=cRoom,
+        image = image,
+        alt = alt
     )
 
 # Log History

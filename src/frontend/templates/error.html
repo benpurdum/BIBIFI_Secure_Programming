@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Log History{% endblock %}
+
+{% block content %}
+<main class="page-container">
+    <h1>Error</h1>
+
+    <p>{{ msg }}</p>
+
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</main>
+{% endblock %}

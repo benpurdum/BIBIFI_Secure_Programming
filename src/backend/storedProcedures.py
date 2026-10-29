@@ -2,22 +2,28 @@
 import sqlite3
 from werkzeug.security import generate_password_hash
 
+from pathlib import Path
+import sqlite3
+
+DATABASE_PATH = (
+    Path(__file__).resolve().parents[2]
+    / "database"
+    / "database.db"
+)
 
 def get_db_connection():
-    db = sqlite3.connect('database/database.db')
+    db = sqlite3.connect(DATABASE_PATH)
     return db
 
 
-def insertUser(username, password, role, name, age):
+def insertUser(id, username, password, role, name, age):
     db = get_db_connection()
 
     password = generate_password_hash(password)
 
-    cursor = db.execute("INSERT INTO users (username, password, role) VALUES (?, ?, ?)", (username, password, role))
+    db.execute("INSERT INTO users (userID, username, password, role) VALUES (?, ?, ?, ?)", (id, username, password, role))
 
-    userID = cursor.lastrowid
-
-    db.execute("INSERT INTO persons (userID, name, age) VALUES (?, ?, ?)", (userID, name, age))
+    db.execute("INSERT INTO persons (userID, name, age) VALUES (?, ?, ?)", (id, name, age))
 
     db.commit()
     db.close()
@@ -101,6 +107,14 @@ def endSession(sessionID, logoutTime, logoutDate):
     db.commit()
     db.close()
 
+def getSessions():
+    db = get_db_connection()
+    
+    logs = db.execute("SELECT * FROM sessions").fetchall()
+
+    db.close()
+    return logs
+
 
 def addAuditLog(userID, time, date, fromRoom, toRoom):
     db = get_db_connection()
@@ -162,3 +176,11 @@ def viewAllUsers():
 
     db.close()
     return users
+
+def getRoomNames():
+    db = get_db_connection()
+
+    rooms = db.execute("SELECT name FROM rooms").fetchall()
+
+    db.close()
+    return rooms

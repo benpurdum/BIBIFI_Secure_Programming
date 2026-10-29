@@ -1,0 +1,12 @@
+
+services:
+  web:
+    build: .
+    container_name: zbag
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./database:/project/database
+      - ./src:/project/src
+    environment:
+      FLASK_DEBUG: "1"

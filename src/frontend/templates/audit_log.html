@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Log History{% endblock %}
+
+{% block content %}
+<main class="page-container">
+    <h1>Session Log History</h1>
+
+    {% if logs %}
+        <ul>
+            {% for log in logs %}
+                <li>Session ID {{ log[0] }}: User {{ log[1] }} logged in at {{ log[2] }} on {{ log[3] }} and logged out at {{ log[4] }} on {{ log[5] }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No log history available.</p>
+    {% endif %}
+
+    <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+</main>
+{% endblock %}
